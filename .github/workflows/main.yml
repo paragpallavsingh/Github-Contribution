@@ -9,12 +9,11 @@ on:
 jobs:
   commit:
     runs-on: ubuntu-22.04
-
     steps:
       - uses: actions/checkout@v3
-
       # Runs a single command using the runners shell
       - name: Run commit script
+        shell: bash
         run: |
            git config --global user.name ${GITHUB_ACTOR}
            git config --global user.email ${{ secrets.USER_EMAIl }}
